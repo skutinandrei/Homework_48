@@ -2,9 +2,9 @@
 {
     public class Order
     {
-        public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
+        public int id { get; set; }
+        public int customer_id { get; set; }
+        public int product_id { get; set; }
+        public int quantity { get; set; }
     }
 }

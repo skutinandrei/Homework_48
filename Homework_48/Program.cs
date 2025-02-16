@@ -6,7 +6,7 @@ namespace Homework_48
 {
     internal class Program
     {
-        private static string connectionString = "Host=localhost;Database=shop;Username=postgres;Password=put_password_here";
+        private static string connectionString = "Host=localhost;Database=shop;Username=postgres;Password=set_password_here";
 
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace Homework_48
                 Console.WriteLine("Все клиенты:");
                 foreach (var customer in customers)
                 {
-                    Console.WriteLine($"{customer.Id} {customer.FirstName} {customer.LastName} {customer.Age}");
+                    Console.WriteLine($"{customer.id} {customer.first_name} {customer.last_name} {customer.age}");
                 }
 
                 Console.Write("Введите возраст для фильтрации клиентов: ");
@@ -28,7 +28,7 @@ namespace Homework_48
                 Console.WriteLine($"Клиенты старше {ageFilter}:");
                 foreach (var customer in filteredCustomers)
                 {
-                    Console.WriteLine($"{customer.Id} {customer.FirstName} {customer.LastName} {customer.Age}");
+                    Console.WriteLine($"{customer.id} {customer.first_name} {customer.last_name} {customer.age}");
                 }
 
                 // Примеры запросов к таблице Products
@@ -36,7 +36,7 @@ namespace Homework_48
                 Console.WriteLine("Все продукты:");
                 foreach (var product in products)
                 {
-                    Console.WriteLine($"{product.Id} {product.Name} {product.Price}");
+                    Console.WriteLine($"{product.id} {product.name} {product.price}");
                 }
 
                 Console.Write("Введите минимальную цену для фильтрации продуктов: ");
@@ -45,7 +45,7 @@ namespace Homework_48
                 Console.WriteLine($"Продукты дороже {priceFilter}:");
                 foreach (var product in filteredProducts)
                 {
-                    Console.WriteLine($"{product.Id} {product.Name} {product.Price}");
+                    Console.WriteLine($"{product.id} {product.name} {product.price}");
                 }
 
                 // Примеры запросов к таблице Orders
@@ -53,7 +53,7 @@ namespace Homework_48
                 Console.WriteLine("Все заказы:");
                 foreach (var order in orders)
                 {
-                    Console.WriteLine($"{order.Id} {order.CustomerId} {order.ProductId} {order.Quantity}");
+                    Console.WriteLine($"{order.id} {order.customer_id} {order.product_id} {order.quantity}");
                 }
 
                 Console.Write("Введите id продукта для фильтрации заказов: ");
@@ -62,18 +62,18 @@ namespace Homework_48
                 Console.WriteLine($"Заказы для продукта с ID {productIdFilter}:");
                 foreach (var order in filteredOrders)
                 {
-                    Console.WriteLine($"{order.Id} {order.CustomerId} {order.ProductId} {order.Quantity}");
+                    Console.WriteLine($"{order.id} {order.customer_id} {order.product_id} {order.quantity}");
                 }
 
                 // Запрос для получения пользователей старше 30 лет, у которых есть заказ на продукт с id=1
                 var query = @"
                 SELECT 
-                    c.id AS CustomerId,
-                    c.first_name AS FirstName,
-                    c.last_name AS LastName,
-                    p.id AS ProductId,
-                    o.quantity AS ProductQuantity,
-                    p.price AS ProductPrice
+                    c.id AS customer_id,
+                    c.first_name AS first_name,
+                    c.last_name AS last_name,
+                    p.id AS product_id,
+                    o.quantity AS product_quantity,
+                    p.price AS product_price
                 FROM 
                     customer c
                 JOIN 
@@ -88,7 +88,7 @@ namespace Homework_48
                 Console.WriteLine("Список пользователей старше 30 лет, у которых есть заказ на продукт с ID=1:");
                 foreach (var row in result)
                 {
-                    Console.WriteLine($"{row.CustomerId} {row.FirstName} {row.LastName} {row.ProductId} {row.ProductQuantity} {row.ProductPrice}");
+                    Console.WriteLine($"{row.customer_id} {row.first_name} {row.last_name} {row.product_id} {row.product_quantity} {row.product_price}");
                 }
             }
         }

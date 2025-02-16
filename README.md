@@ -15,8 +15,5 @@ Dapper / Linq2sql
 Выполнить все запросы, из выбранного ранее задания с передачей параметров.
 
 Результат работы программы:
-![image](https://github.com/user-attachments/assets/7ab2d79f-f6d2-42b7-86d6-c486aed7688b)
-![image](https://github.com/user-attachments/assets/c9119444-28be-48ae-82d2-475ffa06542e)
-![image](https://github.com/user-attachments/assets/6771ea4e-a9d3-45d8-8125-cd6f0538da7b)
-
-
+![image](https://github.com/user-attachments/assets/bd671fab-52a9-412e-a9ee-e2c75d85c797)
+![image](https://github.com/user-attachments/assets/e5d6b903-f88c-496e-bc22-a5738b72617c)
